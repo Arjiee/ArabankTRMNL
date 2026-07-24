@@ -9,7 +9,6 @@ public class UserRegistrationDTO {
     private String phone;
     private String rawPassword;
 
-    // Constructor, Getters, and Setters
     public UserRegistrationDTO(String firstName, String middleName, String lastName, String suffix, String email, String phone, String rawPassword) {
         this.firstName = firstName;
         this.middleName = middleName;

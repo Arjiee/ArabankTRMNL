@@ -15,7 +15,6 @@ public class LoginService {
         // Hash the password the user typed
         String hashedPassword = SecurityUtil.hashPassword(rawPassword);
 
-        // Call the method exactly as it is spelled in the interface
         return userDAO.authenticateUser(username, hashedPassword);
     }
 }

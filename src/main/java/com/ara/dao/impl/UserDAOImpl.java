@@ -68,7 +68,7 @@ public String registerUser(UserRegistrationDTO userDTO, String hashedPassword) {
             return null;
         }
 
-        // 2. Generate Account Number and Insert into Accounts table
+        //Generate Account Number and Insert into Accounts table
         String newAccountNumber = AccountNumberGenerator.generateNextAccountNumber();
 
         try (PreparedStatement accStmt = conn.prepareStatement(insertAccountSql)) {

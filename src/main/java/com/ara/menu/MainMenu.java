@@ -12,7 +12,7 @@ public class MainMenu {
     private final HandleRegistration handleRegistration;
 
     public MainMenu() {
-        // 2. Initialize them when MainMenu starts
+
         this.handleLogin = new HandleLogin();
         this.handleRegistration = new HandleRegistration();
     }
@@ -23,23 +23,18 @@ public class MainMenu {
         while (running) {
             displayMenu();
 
-            // Get the choice using your utility
             String choice = InputUtil.getString("Choose an option: ");
 
             switch(choice) {
                 case "1":
-                    // 3. Call the method on your INSTANCE variable (lowercase 'h')
-                    // Change ".execute()" to whatever you named the method inside your HandleLogin file
                     handleLogin.handleLogin();
                     break;
                 case "2":
-                    // Call the method on your INSTANCE variable
-                    // Change ".execute()" to whatever you named the method inside your HandleRegistration file
                     handleRegistration.handleRegistration();
                     break;
                 case "3":
                     System.out.println("Thank you for using AraBank. Goodbye!");
-                    running = false; // Breaks the while loop
+                    running = false;
                     break;
                 default:
                     System.out.println("[ERROR] Invalid option. Please try again.");

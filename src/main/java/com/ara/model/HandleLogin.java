@@ -1,8 +1,8 @@
 package com.ara.model;
 
 import com.ara.util.InputUtil;
-import com.ara.service.LoginService;    // Import your LoginService
-import com.ara.menu.DashboardMenu;      // Import your DashboardMenu
+import com.ara.service.LoginService;
+import com.ara.menu.DashboardMenu;
 
 public class HandleLogin {
 
@@ -24,7 +24,6 @@ public class HandleLogin {
         if (loginService.login(username, password)) {
             System.out.println("\n[SUCCESS] Login successful.");
 
-            // 4. Use the dashboardMenu variable
             dashboardMenu.display(username);
         } else {
             System.out.println("\n[ERROR] Invalid credentials.");
