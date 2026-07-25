@@ -6,6 +6,8 @@ import com.ara.dao.impl.AccountDAOImpl;
 public class AccountService {
     private final AccountDAO dao = new AccountDAOImpl();
 
+    public String getAccountName(String username) {return dao.getAccountName(username);}
+
     public double getBalance(String acc) { return dao.getBalance(acc); }
 
     public boolean deposit(String acc, double amt) { return amt > 0 && dao.deposit(acc, amt); }

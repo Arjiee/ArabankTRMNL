@@ -4,6 +4,8 @@ import com.ara.util.InputUtil;
 import com.ara.service.LoginService;
 import com.ara.menu.DashboardMenu;
 
+import java.util.concurrent.ExecutionException;
+
 public class HandleLogin {
 
     private final LoginService loginService;
@@ -21,12 +23,17 @@ public class HandleLogin {
         String username = InputUtil.getString("Email/Username: ");
         String password = InputUtil.getString("Password: ");
 
-        if (loginService.login(username, password)) {
-            System.out.println("\n[SUCCESS] Login successful.");
+        try {
+            if (loginService.login(username, password)) {
+                System.out.println("\n[SUCCESS] Login successful.");
+                dashboardMenu.display(username);
+            } else{
+                System.out.println("\n[ERROR] Invalid credentials.");
 
-            dashboardMenu.display(username);
-        } else {
-            System.out.println("\n[ERROR] Invalid credentials.");
+            }
+
+        } catch(Exception e){
+            e.printStackTrace();
         }
     }
 }

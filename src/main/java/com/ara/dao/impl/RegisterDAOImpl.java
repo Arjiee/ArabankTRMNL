@@ -44,11 +44,4 @@ public class RegisterDAOImpl implements RegisterDAO {
         }
     }
 
-    @Override
-    public Integer latestUserId(Integer userId){
-        // TODO: Add database query logic here later
-
-        // Returning null satisfies the compiler for now since the return type is an Object (Integer)
-        return null;
-    }
 }
