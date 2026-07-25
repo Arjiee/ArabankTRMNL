@@ -88,7 +88,12 @@ public String registerUser(UserRegistrationDTO userDTO, String hashedPassword) {
             return null;
         } finally {
             if (conn != null) {
-                try { conn.setAutoCommit(true); conn.close(); } catch (SQLException e) { }
+                try {
+                    conn.setAutoCommit(true); conn.close();
+                }
+                catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
