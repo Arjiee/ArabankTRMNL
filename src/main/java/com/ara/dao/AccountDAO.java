@@ -2,13 +2,13 @@ package com.ara.dao;
 
 public interface AccountDAO {
 
-    String getAccountName(String username);
+    String getAccountName(String email);
 
-    double getBalance(String accountNumber);
+    double getBalance(String email);
 
     boolean deposit(String email, double amount);
 
-    boolean withdraw(String accountNumber, double amount);
+    boolean withdraw(String email, double amount);
 
     boolean transfer(String fromAccount, String toAccount, double amount);
 }
