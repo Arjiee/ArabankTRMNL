@@ -27,7 +27,7 @@ public class DashboardMenu {
             String accountName = accountService.getAccountName(acc);
             setAccount(accountName);
             System.out.println("\n-----------------------------------------------------------------------------");
-            System.out.println("\n                         " + accountName.toUpperCase() + "'S Dashboard           ");
+            System.out.println("\n                           " + accountName.toUpperCase() + "'S Dashboard           ");
             System.out.println("\n-----------------------------------------------------------------------------");
             System.out.println("\n                 1.Deposit 2.Withdraw 3.Transfer 4.Logout");
             System.out.println("\n-----------------------------------------------------------------------------");
