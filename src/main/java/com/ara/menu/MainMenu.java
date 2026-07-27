@@ -17,6 +17,7 @@ public class MainMenu {
         this.handleRegistration = new HandleRegistration();
     }
 
+
     public void start() {
         boolean running = true;
 
@@ -44,7 +45,7 @@ public class MainMenu {
 
     private void displayMenu() {
         System.out.println("\n----------------------------------");
-        System.out.println("      WELCOME TO ARABANK");
+        System.out.println("       WELCOME TO ARABANK");
         System.out.println("----------------------------------");
         System.out.println("1. Login");
         System.out.println("2. Register");

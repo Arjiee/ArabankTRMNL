@@ -19,9 +19,9 @@ public class DashboardMenu {
         this.email = email;
     }
 
-    private void reDisplayMenu(){
+    private void reDisplayMenu(String acc){
 
-        display(email);
+        display(acc);
     }
 
     public void display(String acc) {
@@ -43,17 +43,21 @@ public class DashboardMenu {
 
                 case "1":
                     System.out.println(accountService.deposit(email, InputUtil.getDouble("Amount: ")) ? "Success" : "Failed");
-                    reDisplayMenu();
-                    break;
+                    reDisplayMenu(acc);
+                    return;
                 case "2":
                     System.out.println(accountService.withdraw(email, InputUtil.getDouble("Amount: ")) ? "Success" : "Failed");
-                    reDisplayMenu();
-                    break;
+                    reDisplayMenu(acc);
+                    return;
                 case "3":
                     System.out.println(accountService.transfer(email, InputUtil.getString("To Account: "), InputUtil.getDouble("Amount: ")) ? "Success" : "Failed");
-                    reDisplayMenu();
-                    break;
+                    reDisplayMenu(acc);
+                    return;
                 case "4":
+                    return;
+                default:
+                    System.out.println("Invalid Input");
+                    reDisplayMenu(acc);
                     return;
             }
         }

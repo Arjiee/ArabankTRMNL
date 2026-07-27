@@ -9,12 +9,6 @@ public class InputUtil {
         System.out.print(prompt);
         return scanner.nextLine();
     }
-    public static String getStrInput(){
-        return scanner.nextLine();
-    }
-    public static Byte getByteInput(){
-        return scanner.nextByte();
-    }
 
     public static double getDouble(String prompt) {
         while (true) {

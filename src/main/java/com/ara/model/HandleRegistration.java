@@ -4,7 +4,7 @@ import com.ara.service.RegisterService;
 import com.ara.util.InputUtil;
 
 public class HandleRegistration {
-        public static void handleRegistration() {
+        public void handleRegistration() {
         System.out.println("\n--- ACCOUNT ENROLLMENT ---");
 
         String firstName = InputUtil.getString("First Name: ");
