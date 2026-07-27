@@ -55,7 +55,7 @@ public class AccountDAOImpl implements AccountDAO {
             System.out.println("Cannot transfer to yourself");
             return false;
         } else if (getBalanceByAccNumber(to) == -1) {
-            System.out.println("Acount doesn't exist!");
+            System.out.println("Account doesn't exist!");
             return false;
         }
 

@@ -36,15 +36,16 @@ public boolean authenticateUser(String username, String password) {
 
 @Override
 public String registerUser(UserRegistrationDTO userDTO, String hashedPassword) {
+
     String insertUserSql = "INSERT INTO users (first_name, middle_name, last_name, suffix, email, password_hash, phone_number) VALUES (?, ?, ?, ?, ?, ?, ?)";
     String insertAccountSql = "INSERT INTO accounts (user_id, account_number, account_type, balance, status) VALUES (?, ?, 'Savings', 0.00, 'Active')";
-
     Connection conn = null;
+
     try {
         conn = DatabaseConnection.getConnection();
         conn.setAutoCommit(false); // Begin Transaction
 
-            // 1. Insert into Users table
+            //Insert into Users table
         long generatedUserId = -1;
         try (PreparedStatement userStmt = conn.prepareStatement(insertUserSql, Statement.RETURN_GENERATED_KEYS)) {
             userStmt.setString(1, userDTO.getFirstName());
@@ -69,7 +70,7 @@ public String registerUser(UserRegistrationDTO userDTO, String hashedPassword) {
         }
 
         //Generate Account Number and Insert into Accounts table
-        String newAccountNumber = AccountNumberGenerator.generateNextAccountNumber();
+        String newAccountNumber = AccountNumberGenerator.accountNumberGenerator(generatedUserId);
 
         try (PreparedStatement accStmt = conn.prepareStatement(insertAccountSql)) {
             accStmt.setLong(1, generatedUserId);
